@@ -4,6 +4,7 @@ import { useMemo } from "react";
 import { useAuth } from "@/lib/auth-context";
 import { EMPTY_STATS } from "@/lib/dashboard";
 import { useProblemProgress } from "@/lib/progress";
+import { computeStreakStats } from "@/lib/streak";
 import {
   buildSchedule,
   collectPhaseProblems,
@@ -29,7 +30,7 @@ export function DashboardView({
   phases: PhaseWithTopics[];
 }) {
   const { user } = useAuth();
-  const { solvedIds } = useProblemProgress();
+  const { solvedIds, solvedAt } = useProblemProgress();
 
   const start = useMemo(() => {
     if (user?.joinedAt) {
@@ -70,14 +71,17 @@ export function DashboardView({
         }
       }
     }
+    const streak = computeStreakStats(solvedAt.values());
     return {
       ...EMPTY_STATS,
       problemsSolved: solvedIds.size,
       topicsCovered: covered,
       topicsTotal: phases[0]?.topics.length ?? 0,
       solvedByDifficulty: byDifficulty,
+      ...streak,
+      weeklySolved: streak.contributions.slice(-7),
     };
-  }, [phases, solvedIds]);
+  }, [phases, solvedIds, solvedAt]);
 
   const youSolvedToday = todayProblems.some((p) => solvedIds.has(p.id));
 

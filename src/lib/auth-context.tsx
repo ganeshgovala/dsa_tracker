@@ -117,7 +117,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           if (code === "auth/popup-closed-by-user" || code === "auth/cancelled-popup-request") {
             return; // user dismissed — not an error worth showing
           }
-          setError("Could not sign in with Google. Please try again.");
+          console.error("[auth] Google sign-in failed:", e);
+          setError(
+            code === "auth/unauthorized-domain"
+              ? "This domain isn't authorized. Add it in Firebase Console → Authentication → Settings → Authorized domains."
+              : code === "auth/operation-not-allowed"
+                ? "Google sign-in isn't enabled for this project (Firebase Console → Authentication → Sign-in method)."
+                : code === "auth/popup-blocked"
+                  ? "Your browser blocked the sign-in popup — allow popups and try again."
+                  : `Could not sign in with Google. (${code || "unknown error"})`,
+          );
         }
       },
       logout: async () => {

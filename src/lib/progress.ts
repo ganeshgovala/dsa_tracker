@@ -18,22 +18,45 @@ import { useAuth } from "./auth-context";
  *
  * Demo mode (not configured): falls back to localStorage keyed by uid so the
  * UI still works locally. Toggles are optimistic for instant feedback.
+ *
+ * State is a Map of problemId → solvedAt (ISO), so consumers get both the set
+ * of solved ids AND the solve dates (needed for the practice-streak calendar).
  */
 
 const LS_PREFIX = "dsa-progress-";
 
-const EMPTY_SET: Set<string> = new Set();
+const EMPTY_MAP: Map<string, string> = new Map();
+
+/** Parse stored progress, tolerating the old `["id", ...]` (no-date) format. */
+function parseStored(raw: string | null): Map<string, string> {
+  const map = new Map<string, string>();
+  if (!raw) return map;
+  try {
+    const parsed = JSON.parse(raw) as unknown;
+    if (Array.isArray(parsed)) {
+      for (const item of parsed) {
+        if (typeof item === "string") map.set(item, "");
+        else if (Array.isArray(item) && typeof item[0] === "string") {
+          map.set(item[0], typeof item[1] === "string" ? item[1] : "");
+        }
+      }
+    }
+  } catch {
+    // ignore malformed storage
+  }
+  return map;
+}
 
 export function useProblemProgress() {
   const { user } = useAuth();
   const uid = user?.uid ?? null;
-  const [stored, setStored] = useState<Set<string>>(() => new Set());
+  const [stored, setStored] = useState<Map<string, string>>(() => new Map());
 
   // Reset when the signed-in account changes (render-time state reset).
   const [prevUid, setPrevUid] = useState(uid);
   if (prevUid !== uid) {
     setPrevUid(uid);
-    setStored(new Set());
+    setStored(new Map());
   }
 
   useEffect(() => {
@@ -45,9 +68,10 @@ export function useProblemProgress() {
         const unsubscribe = onSnapshot(
           collection(db, "user_progress", uid, "problems"),
           (snap) => {
-            const next = new Set<string>();
+            const next = new Map<string, string>();
             snap.docs.forEach((d) => {
-              if ((d.data() as { solved?: boolean }).solved) next.add(d.id);
+              const data = d.data() as { solved?: boolean; solvedAt?: string };
+              if (data.solved) next.set(d.id, data.solvedAt ?? "");
             });
             setStored(next);
           },
@@ -62,10 +86,9 @@ export function useProblemProgress() {
     void Promise.resolve().then(() => {
       if (cancelled) return;
       try {
-        const raw = localStorage.getItem(LS_PREFIX + uid);
-        setStored(new Set(JSON.parse(raw ?? "[]") as string[]));
+        setStored(parseStored(localStorage.getItem(LS_PREFIX + uid)));
       } catch {
-        setStored(new Set());
+        setStored(new Map());
       }
     });
     return () => {
@@ -73,17 +96,19 @@ export function useProblemProgress() {
     };
   }, [uid]);
 
-  const solvedIds = uid ? stored : EMPTY_SET;
+  const solvedAt = uid ? stored : EMPTY_MAP;
+  const solvedIds = useMemo(() => new Set(solvedAt.keys()), [solvedAt]);
 
   const toggle = useCallback(
     (problemId: string) => {
       if (!uid) return;
-      const isSolved = !solvedIds.has(problemId);
+      const isSolved = !stored.has(problemId);
+      const now = new Date().toISOString();
 
       // Optimistic update
       setStored((prev) => {
-        const next = new Set(uid ? prev : EMPTY_SET);
-        if (isSolved) next.add(problemId);
+        const next = new Map(prev);
+        if (isSolved) next.set(problemId, now);
         else next.delete(problemId);
         return next;
       });
@@ -91,31 +116,29 @@ export function useProblemProgress() {
       if (isFirebaseConfigured) {
         const db = getDb();
         if (db) {
-          setDoc(
-            doc(db, "user_progress", uid, "problems", problemId),
-            { solved: isSolved, solvedAt: new Date().toISOString() },
-          ).catch((err) =>
-            console.warn("[progress] write failed:", err),
-          );
+          setDoc(doc(db, "user_progress", uid, "problems", problemId), {
+            solved: isSolved,
+            solvedAt: now,
+          }).catch((err) => console.warn("[progress] write failed:", err));
           return;
         }
       }
+
       // localStorage fallback
       try {
-        const raw = localStorage.getItem(LS_PREFIX + uid);
-        const list = new Set(JSON.parse(raw ?? "[]") as string[]);
-        if (isSolved) list.add(problemId);
-        else list.delete(problemId);
-        localStorage.setItem(
-          LS_PREFIX + uid,
-          JSON.stringify([...list]),
-        );
+        const map = parseStored(localStorage.getItem(LS_PREFIX + uid));
+        if (isSolved) map.set(problemId, now);
+        else map.delete(problemId);
+        localStorage.setItem(LS_PREFIX + uid, JSON.stringify([...map.entries()]));
       } catch {
         // ignore storage errors
       }
     },
-    [uid, solvedIds],
+    [uid, stored],
   );
 
-  return useMemo(() => ({ solvedIds, toggle }), [solvedIds, toggle]);
+  return useMemo(
+    () => ({ solvedIds, solvedAt, toggle }),
+    [solvedIds, solvedAt, toggle],
+  );
 }
