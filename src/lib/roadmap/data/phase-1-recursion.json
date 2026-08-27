@@ -1,0 +1,78 @@
+{
+  "phase": {
+    "number": 1,
+    "name": "Foundation + Pattern Setup",
+    "is_optional": false
+  },
+  "topics": [
+    {
+      "name": "Recursion",
+      "order": 7,
+      "problems": [
+        {
+          "name": "Fibonacci Number",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/fibonacci-number/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/nth-fibonacci-number1335/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 1
+        },
+        {
+          "name": "Power of Two",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/power-of-two/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/power-of-2-1587115620/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 2
+        },
+        {
+          "name": "Factorial",
+          "difficulty": "EASY",
+          "leetcode_url": null,
+          "gfg_url": "https://www.geeksforgeeks.org/problems/factorial5739/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 3
+        },
+        {
+          "name": "Sum of Natural Numbers",
+          "difficulty": "EASY",
+          "leetcode_url": null,
+          "gfg_url": "https://www.geeksforgeeks.org/problems/sum-of-first-n-terms5843/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 4
+        },
+        {
+          "name": "Reverse String",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/reverse-string/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/reverse-a-string/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 5
+        },
+        {
+          "name": "Palindrome Check Using Recursion",
+          "difficulty": "EASY",
+          "leetcode_url": null,
+          "gfg_url": null,
+          "video_url": null,
+          "is_core": true,
+          "order": 6
+        },
+        {
+          "name": "Tower of Hanoi",
+          "difficulty": "MEDIUM",
+          "leetcode_url": null,
+          "gfg_url": "https://www.geeksforgeeks.org/problems/tower-of-hanoi-1587115620/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 7
+        }
+      ]
+    }
+  ]
+}

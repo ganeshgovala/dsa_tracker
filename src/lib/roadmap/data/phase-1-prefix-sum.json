@@ -1,0 +1,78 @@
+{
+  "phase": {
+    "number": 1,
+    "name": "Foundation + Pattern Setup",
+    "is_optional": false
+  },
+  "topics": [
+    {
+      "name": "Prefix Sum",
+      "order": 5,
+      "problems": [
+        {
+          "name": "Running Sum of 1d Array",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/running-sum-of-1d-array/",
+          "gfg_url": null,
+          "video_url": null,
+          "is_core": true,
+          "order": 1
+        },
+        {
+          "name": "Find Pivot Index",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/find-pivot-index/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/equilibrium-point-1587115620/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 2
+        },
+        {
+          "name": "Range Sum Query - Immutable",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/range-sum-query-immutable/",
+          "gfg_url": null,
+          "video_url": null,
+          "is_core": true,
+          "order": 3
+        },
+        {
+          "name": "Left and Right Sum Differences",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/left-and-right-sum-differences/",
+          "gfg_url": null,
+          "video_url": null,
+          "is_core": true,
+          "order": 4
+        },
+        {
+          "name": "Product of Array Except Self",
+          "difficulty": "MEDIUM",
+          "leetcode_url": "https://leetcode.com/problems/product-of-array-except-self/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/product-array-puzzle4525/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 5
+        },
+        {
+          "name": "Subarray Sum Equals K",
+          "difficulty": "MEDIUM",
+          "leetcode_url": "https://leetcode.com/problems/subarray-sum-equals-k/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/subarrays-with-sum-k/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 6
+        },
+        {
+          "name": "Longest Subarray with Sum K",
+          "difficulty": "MEDIUM",
+          "leetcode_url": null,
+          "gfg_url": "https://www.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 7
+        }
+      ]
+    }
+  ]
+}

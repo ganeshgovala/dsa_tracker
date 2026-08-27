@@ -1,0 +1,78 @@
+{
+  "phase": {
+    "number": 1,
+    "name": "Foundation + Pattern Setup",
+    "is_optional": false
+  },
+  "topics": [
+    {
+      "name": "Sliding Window",
+      "order": 6,
+      "problems": [
+        {
+          "name": "Maximum Average Subarray I",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/maximum-average-subarray-i/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/max-sum-subarray-of-size-k5313/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 1
+        },
+        {
+          "name": "Maximum Number of Vowels in a Substring of Given Length",
+          "difficulty": "MEDIUM",
+          "leetcode_url": "https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/",
+          "gfg_url": null,
+          "video_url": null,
+          "is_core": true,
+          "order": 2
+        },
+        {
+          "name": "Longest Substring Without Repeating Characters",
+          "difficulty": "MEDIUM",
+          "leetcode_url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/longest-distinct-characters-in-string5848/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 3
+        },
+        {
+          "name": "Longest Repeating Character Replacement",
+          "difficulty": "MEDIUM",
+          "leetcode_url": "https://leetcode.com/problems/longest-repeating-character-replacement/",
+          "gfg_url": null,
+          "video_url": null,
+          "is_core": true,
+          "order": 4
+        },
+        {
+          "name": "Permutation in String",
+          "difficulty": "MEDIUM",
+          "leetcode_url": "https://leetcode.com/problems/permutation-in-string/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/check-if-string-is-substring/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 5
+        },
+        {
+          "name": "Minimum Size Subarray Sum",
+          "difficulty": "MEDIUM",
+          "leetcode_url": "https://leetcode.com/problems/minimum-size-subarray-sum/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/smallest-subarray-with-sum-greater-than-x5651/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 6
+        },
+        {
+          "name": "Fruit Into Baskets",
+          "difficulty": "MEDIUM",
+          "leetcode_url": "https://leetcode.com/problems/fruit-into-baskets/",
+          "gfg_url": null,
+          "video_url": null,
+          "is_core": true,
+          "order": 7
+        }
+      ]
+    }
+  ]
+}

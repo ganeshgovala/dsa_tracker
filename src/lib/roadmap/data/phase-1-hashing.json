@@ -1,0 +1,105 @@
+{
+  "phase": {
+    "number": 1,
+    "name": "Foundation + Pattern Setup",
+    "is_optional": false
+  },
+  "topics": [
+    {
+      "name": "Hashing",
+      "order": 3,
+      "problems": [
+        {
+          "name": "Contains Duplicate",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/contains-duplicate/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/check-if-array-contains-duplicates/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 1
+        },
+        {
+          "name": "Two Sum",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/two-sum/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/key-pair5616/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 2
+        },
+        {
+          "name": "First Repeating Element",
+          "difficulty": "EASY",
+          "leetcode_url": null,
+          "gfg_url": "https://www.geeksforgeeks.org/problems/first-repeating-element4018/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 3
+        },
+        {
+          "name": "Majority Element",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/majority-element/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/majority-element-1587115620/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 4
+        },
+        {
+          "name": "Valid Anagram",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/valid-anagram/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/anagram-1587115620/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 5
+        },
+        {
+          "name": "Group Anagrams",
+          "difficulty": "MEDIUM",
+          "leetcode_url": "https://leetcode.com/problems/group-anagrams/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/anagrams-1587115620/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 6
+        },
+        {
+          "name": "Longest Consecutive Sequence",
+          "difficulty": "MEDIUM",
+          "leetcode_url": "https://leetcode.com/problems/longest-consecutive-sequence/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/longest-consecutive-subsequence2449/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 7
+        },
+        {
+          "name": "Subarray Sum Equals K",
+          "difficulty": "MEDIUM",
+          "leetcode_url": "https://leetcode.com/problems/subarray-sum-equals-k/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/subarrays-with-sum-k/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 8
+        },
+        {
+          "name": "Zero Sum Subarrays",
+          "difficulty": "MEDIUM",
+          "leetcode_url": null,
+          "gfg_url": "https://www.geeksforgeeks.org/problems/zero-sum-subarrays1825/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 9
+        },
+        {
+          "name": "Longest Subarray with Sum K",
+          "difficulty": "MEDIUM",
+          "leetcode_url": null,
+          "gfg_url": "https://www.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 10
+        }
+      ]
+    }
+  ]
+}

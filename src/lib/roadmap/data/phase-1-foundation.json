@@ -1,0 +1,192 @@
+{
+  "phase": {
+    "number": 1,
+    "name": "Foundation + Pattern Setup",
+    "is_optional": false
+  },
+  "topics": [
+    {
+      "name": "Arrays",
+      "order": 1,
+      "problems": [
+        {
+          "name": "Largest Element in an Array",
+          "difficulty": "EASY",
+          "leetcode_url": null,
+          "gfg_url": "https://www.geeksforgeeks.org/problems/largest-element-in-array4009/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 1
+        },
+        {
+          "name": "Second Largest Element in an Array",
+          "difficulty": "EASY",
+          "leetcode_url": null,
+          "gfg_url": "https://www.geeksforgeeks.org/problems/second-largest3735/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 2
+        },
+        {
+          "name": "Check if Array Is Sorted and Rotated",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/check-if-an-array-is-sorted-and-rotated-clockwise-1587115621/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 3
+        },
+        {
+          "name": "Remove Duplicates from Sorted Array",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/remove-duplicates-from-sorted-array/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/remove-duplicate-elements-from-sorted-array/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 4
+        },
+        {
+          "name": "Move Zeroes",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/move-zeroes/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/move-all-zeroes-to-end-of-array0751/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 5
+        },
+        {
+          "name": "Best Time to Buy and Sell Stock",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/stock-buy-and-sell-1587115621/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 6
+        },
+        {
+          "name": "Maximum Subarray",
+          "difficulty": "MEDIUM",
+          "leetcode_url": "https://leetcode.com/problems/maximum-subarray/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/kadanes-algorithm-1587115620/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 7
+        },
+        {
+          "name": "Merge Sorted Array",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/merge-sorted-array/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/merge-two-sorted-arrays-1587115620/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 8
+        },
+        {
+          "name": "Rotate Array",
+          "difficulty": "MEDIUM",
+          "leetcode_url": "https://leetcode.com/problems/rotate-array/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/rotate-array-by-n-elements-1587115621/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 9
+        },
+        {
+          "name": "Product of Array Except Self",
+          "difficulty": "MEDIUM",
+          "leetcode_url": "https://leetcode.com/problems/product-of-array-except-self/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/product-array-puzzle4525/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 10
+        }
+      ]
+    },
+    {
+      "name": "Strings",
+      "order": 2,
+      "problems": [
+        {
+          "name": "Reverse String",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/reverse-string/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/reverse-a-string/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 1
+        },
+        {
+          "name": "Valid Palindrome",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/valid-palindrome/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/palindrome-string0817/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 2
+        },
+        {
+          "name": "Longest Common Prefix",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/longest-common-prefix/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/longest-common-prefix-in-an-array5129/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 3
+        },
+        {
+          "name": "Valid Anagram",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/valid-anagram/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/anagram-1587115620/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 4
+        },
+        {
+          "name": "Isomorphic Strings",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/isomorphic-strings/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/isomorphic-strings-1587115620/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 5
+        },
+        {
+          "name": "Longest Palindrome",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/longest-palindrome/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/longest-palindrome-in-a-string3411/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 6
+        },
+        {
+          "name": "Valid Parentheses",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/valid-parentheses/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/parenthesis-checker2744/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 7
+        },
+        {
+          "name": "Group Anagrams",
+          "difficulty": "MEDIUM",
+          "leetcode_url": "https://leetcode.com/problems/group-anagrams/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/anagrams-1587115620/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 8
+        },
+        {
+          "name": "Longest Substring Without Repeating Characters",
+          "difficulty": "MEDIUM",
+          "leetcode_url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/longest-distinct-characters-in-string5848/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 9
+        }
+      ]
+    }
+  ]
+}

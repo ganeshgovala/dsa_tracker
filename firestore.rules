@@ -1,0 +1,86 @@
+rules_version = '2';
+
+// Security rules for the DSA Tracker Firestore database.
+//
+// Access model
+// ------------
+// Private, per-user (read/written from the browser as the signed-in owner):
+//   user_progress/{uid}/problems/{problemId}   — a user's solve/review progress
+//   user_friends/{uid}/friends/{friendUid}      — a user's friends list
+//
+// Public profile directory (read from the browser by any signed-in user):
+//   users/{uid}                                 — name/photo for the friends picker
+//
+// Shared content read on the SERVER with the anonymous Web SDK — i.e. from
+// Server Components and /api/* route handlers via getDb() in src/lib/firebase.ts.
+// Those requests are UNAUTHENTICATED (request.auth == null), so these
+// collections must allow read without auth:
+//   stats/summary                               — dashboard aggregate stats
+//   problems/{id}, topics/{id}, friends/{id}    — dashboard collections
+//   roadmap_phases|topics|problems/{id}         — phase-wise curriculum
+//
+// They hold curriculum + aggregate numbers (no user PII), so public read is
+// acceptable. Writes stay locked: seed/edit them from an admin context — either
+// the Firebase Console, or by moving the /api routes to the Firebase Admin SDK
+// (the Admin SDK bypasses these rules entirely). To seed with the current
+// client-SDK /api/seed routes, temporarily flip the roadmap writes to
+// `if true`, run the seed, then revert (see SEEDING block at the bottom).
+//
+// Deploy:  firebase deploy --only firestore:rules
+// (or paste into Firebase Console -> Firestore Database -> Rules -> Publish)
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+
+    // --- Private per-user data — owner only --------------------------------
+    match /user_progress/{uid}/{document=**} {
+      allow read, write: if isOwner(uid);
+    }
+
+    match /user_friends/{uid}/{document=**} {
+      allow read, write: if isOwner(uid);
+    }
+
+    // --- Public profile directory -----------------------------------------
+    // Any signed-in user can read (needed for the friends picker's
+    // `where("uid","!=",me)` query); you may only write your own document.
+    match /users/{uid} {
+      allow read: if signedIn();
+      allow write: if isOwner(uid);
+    }
+
+    // --- Shared dashboard content -----------------------------------------
+    // Read by unauthenticated server code (dashboard.ts), so read can't
+    // require auth. No client writes — seed from the Console / Admin SDK.
+    match /stats/{document}   { allow read: if true; allow write: if false; }
+    match /problems/{id}      { allow read: if true; allow write: if false; }
+    match /topics/{id}        { allow read: if true; allow write: if false; }
+    match /friends/{id}       { allow read: if true; allow write: if false; }
+
+    // --- Shared roadmap / curriculum --------------------------------------
+    // Read by the roadmap page + /api GET routes (server, unauthenticated).
+    // Written only by the seed/CRUD /api routes — see SEEDING note above.
+    match /roadmap_phases/{id}   { allow read: if true; allow write: if false; }
+    match /roadmap_topics/{id}   { allow read: if true; allow write: if false; }
+    match /roadmap_problems/{id} { allow read: if true; allow write: if false; }
+
+    // --- SEEDING (temporary) ----------------------------------------------
+    // To populate the roadmap via the current client-SDK /api/seed routes,
+    // temporarily replace the three roadmap matches above with:
+    //
+    //   match /roadmap_phases/{id}   { allow read: if true; allow write: if true; }
+    //   match /roadmap_topics/{id}   { allow read: if true; allow write: if true; }
+    //   match /roadmap_problems/{id} { allow read: if true; allow write: if true; }
+    //
+    // run the seed, then REVERT to `allow write: if false`. Do not leave
+    // `write: if true` deployed — anyone with your project id could write.
+  }
+}

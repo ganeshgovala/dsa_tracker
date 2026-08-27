@@ -1,0 +1,87 @@
+{
+  "phase": {
+    "number": 1,
+    "name": "Foundation + Pattern Setup",
+    "is_optional": false
+  },
+  "topics": [
+    {
+      "name": "Math",
+      "order": 8,
+      "problems": [
+        {
+          "name": "Palindrome Number",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/palindrome-number/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/palindrome-numbers/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 1
+        },
+        {
+          "name": "Reverse Integer",
+          "difficulty": "MEDIUM",
+          "leetcode_url": "https://leetcode.com/problems/reverse-integer/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/reverse-digit3536/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 2
+        },
+        {
+          "name": "Fizz Buzz",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/fizz-buzz/",
+          "gfg_url": null,
+          "video_url": null,
+          "is_core": true,
+          "order": 3
+        },
+        {
+          "name": "Count Digits",
+          "difficulty": "EASY",
+          "leetcode_url": null,
+          "gfg_url": "https://www.geeksforgeeks.org/problems/count-digits5716/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 4
+        },
+        {
+          "name": "GCD of Two Numbers",
+          "difficulty": "EASY",
+          "leetcode_url": null,
+          "gfg_url": "https://www.geeksforgeeks.org/problems/gcd-of-two-numbers3459/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 5
+        },
+        {
+          "name": "Prime Number",
+          "difficulty": "EASY",
+          "leetcode_url": null,
+          "gfg_url": "https://www.geeksforgeeks.org/problems/prime-number2314/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 6
+        },
+        {
+          "name": "Count Primes",
+          "difficulty": "MEDIUM",
+          "leetcode_url": "https://leetcode.com/problems/count-primes/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/count-primes-in-n-range1603/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 7
+        },
+        {
+          "name": "Power of Three",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/power-of-three/",
+          "gfg_url": null,
+          "video_url": null,
+          "is_core": true,
+          "order": 8
+        }
+      ]
+    }
+  ]
+}

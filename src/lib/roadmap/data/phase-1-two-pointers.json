@@ -1,0 +1,78 @@
+{
+  "phase": {
+    "number": 1,
+    "name": "Foundation + Pattern Setup",
+    "is_optional": false
+  },
+  "topics": [
+    {
+      "name": "Two Pointers",
+      "order": 4,
+      "problems": [
+        {
+          "name": "Valid Palindrome",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/valid-palindrome/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/palindrome-string0817/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 1
+        },
+        {
+          "name": "Two Sum II - Input Array Is Sorted",
+          "difficulty": "MEDIUM",
+          "leetcode_url": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/two-sum-1587115620/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 2
+        },
+        {
+          "name": "Remove Duplicates from Sorted Array",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/remove-duplicates-from-sorted-array/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/remove-duplicate-elements-from-sorted-array/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 3
+        },
+        {
+          "name": "Move Zeroes",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/move-zeroes/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/move-all-zeroes-to-end-of-array0751/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 4
+        },
+        {
+          "name": "3Sum",
+          "difficulty": "MEDIUM",
+          "leetcode_url": "https://leetcode.com/problems/3sum/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/three-sum/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 5
+        },
+        {
+          "name": "Container With Most Water",
+          "difficulty": "MEDIUM",
+          "leetcode_url": "https://leetcode.com/problems/container-with-most-water/",
+          "gfg_url": "https://www.geeksforgeeks.org/problems/container-with-most-water0535/1",
+          "video_url": null,
+          "is_core": true,
+          "order": 6
+        },
+        {
+          "name": "Squares of a Sorted Array",
+          "difficulty": "EASY",
+          "leetcode_url": "https://leetcode.com/problems/squares-of-a-sorted-array/",
+          "gfg_url": null,
+          "video_url": null,
+          "is_core": true,
+          "order": 7
+        }
+      ]
+    }
+  ]
+}
